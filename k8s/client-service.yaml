@@ -2,13 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   name: fewv-client
-  namespace: fewv
+  labels:
+    app: fewv-client
 spec:
   type: NodePort
   selector:
     app: fewv-client
   ports:
-    - name: http
-      port: 80
+    - port: 80
       targetPort: 80
       nodePort: 30080
