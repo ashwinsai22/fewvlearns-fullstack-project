@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fewv-server
+  namespace: fewv
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fewv-server
+  template:
+    metadata:
+      labels:
+        app: fewv-server
+    spec:
+      containers:
+        - name: server
+          image: ashwinsai22/fewv-server:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000

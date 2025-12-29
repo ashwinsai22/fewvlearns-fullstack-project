@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fewv-client
+  namespace: fewv
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fewv-client
+  template:
+    metadata:
+      labels:
+        app: fewv-client
+    spec:
+      containers:
+        - name: client
+          image: ashwinsai22/fewv-client:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
