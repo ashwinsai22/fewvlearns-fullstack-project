@@ -33,11 +33,22 @@ export default function Footer() {
             </svg>
           </Link>
 
-          <Link to="/" className="block text-gray-200 transition-all duration-500 hover:text-red-600">
-            <svg className="w-[1.688rem] h-[1.688rem]" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9.76556 14.8811C9.76556 12.3243 11.8389 10.2511 14.3972 10.2511C16.9555 10.2511 19.03 12.3243 19.03 14.8811C19.03 17.4379 16.9555 19.5111 14.3972 19.5111C11.8389 19.5111 9.76556 17.4379 9.76556 14.8811Z" fill="currentColor"/>
-            </svg>
-          </Link>
+<Link to="/" className="block text-gray-200 transition-all duration-500 hover:text-red-600">
+  <svg
+    className="w-[1.688rem] h-[1.688rem]"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37a4 4 0 1 1-7.999.001A4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+</Link>
 
           <Link to="/" className="block text-gray-200 transition-all duration-500 hover:text-red-600">
             <svg className="w-[0.938rem] h-[1.625rem]" viewBox="0 0 15 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +64,7 @@ export default function Footer() {
         </div>
 
         <span className="text-lg text-red-600 text-center block">
-          ©<Link to="/" className="hover:text-red-500">FewvLearns</Link> 2024. All rights reserved.
+          ©<Link to="/" className="hover:text-red-500">Bezawada Academy</Link> 2025. All rights reserved.
         </span>
       </div>
     </footer>

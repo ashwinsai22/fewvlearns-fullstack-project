@@ -1,7 +1,7 @@
-import Jane from "./assets/testimonials-images/jane.jpg";
-import Chris from "./assets/testimonials-images/chris.jpg";
-import Leslie from "./assets/testimonials-images/Leslie.jpg";
-import Mike from "./assets/testimonials-images/mike.jpg";
+import Jane from "./assets/testimonials-images/jane.png";
+import Chris from "./assets/testimonials-images/chris.png";
+import Leslie from "./assets/testimonials-images/Leslie.png";
+import Mike from "./assets/testimonials-images/mike.png";
 import Emily from "./assets/testimonials-images/Emily.png";
 
 const people = [
@@ -40,7 +40,7 @@ export default function Team() {
           Our dedicated team
         </h2>
         <p className="mt-6 text-gray-400">
-          FewvLearns has a team of passionate individuals who are dedicated to
+          Bezawada Academy has a team of passionate individuals who are dedicated to
           helping you learn new skills and advance your career.
         </p>
       </div>

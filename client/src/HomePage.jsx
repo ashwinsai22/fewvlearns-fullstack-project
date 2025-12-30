@@ -1,22 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import backgroundImage from "./assets/home-image.png";
-import Jane from "./assets/testimonials-images/jane.jpg";
-import Chris from "./assets/testimonials-images/chris.jpg";
-import Leslie from "./assets/testimonials-images/Leslie.jpg";
-import Mike from "./assets/testimonials-images/mike.jpg";
+import Jane from "./assets/testimonials-images/jane.png";
+import Chris from "./assets/testimonials-images/chris.png";
+import Leslie from "./assets/testimonials-images/Leslie.png";
+import Mike from "./assets/testimonials-images/mike.png";
 
 const testimonials = [
   {
     id: 1,
-    text: "FewLearns have been a great resource for me. I've learned so much from their courses. I would recommend them to anyone. 🥰",
+    text: "Bezawada Academy have been a great resource for me. I've learned so much from their courses. I would recommend them to anyone. 🥰",
     author: "Jane Steiner",
     title: "VP Sales at Google",
     imageUrl: Jane,
   },
   {
     id: 2,
-    text: "The K8s course has been a game changer for me. This is how you explain complex topics in a simple way. Thanks for the great content, FewLearns!",
+    text: "The K8s course has been a game changer for me. This is how you explain complex topics in a simple way. Thanks for the great content, Bezawada Academy!",
     author: "Chris Ambrose",
     title: "Lead marketer at Netflix",
     imageUrl: Chris,
@@ -58,14 +58,15 @@ const MainPage = () => {
               Welcome to,
               <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-700 bg-clip-text text-transparent">
                 {" "}
-                FewvLearns{" "}
+                Bezawada Academy{" "}
               </span>
               !
             </h1>
 
             <p className="mx-auto mt-4 max-w-xl sm:text-xl/relaxed text-gray-300">
-              We are incredibly excited to announce our first free resource, a
-              guide for building modern web applications.
+              Unlock your true potential and engineer a brighter tomorrow. 
+              We bridge the gap between academic degrees and industry-ready careers 
+              through practical IT training.
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -96,7 +97,7 @@ const MainPage = () => {
           </div>
         </div>
 
-        {/* What is FewvLearns */}
+        {/* What is Bezawada Academy */}
         <div className="my-24 max-w-5xl mx-auto px-10">
           <div className="mx-auto py-12 text-center">
             <div className="text-sm font-bold tracking-wider text-red-600 uppercase">
@@ -106,7 +107,7 @@ const MainPage = () => {
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-6xl py-4">
               What is{" "}
               <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-700 bg-clip-text text-transparent">
-                FewvLearns
+                Bezawada Academy
               </span>
               ?
             </p>
@@ -125,7 +126,7 @@ const MainPage = () => {
                   className="relative bg-[#141414] shadow-lg hover:shadow-red-600 rounded-2xl p-4 text-xl transform transition-transform duration-300 hover:scale-105"
                 >
                   {{
-                    1: "FewVLearns is a platform for learning web development. We offer courses on various topics like React, Node.js, Kubernetes, and more.",
+                    1: "Bezawada Academy is a platform for learning web development. We offer courses on various topics like React, Node.js, Kubernetes, and more.",
                     2: "Our courses are designed to help you learn new skills and advance your career. We offer both free and paid courses.",
                     3: "We have a team of experienced developers who are passionate about teaching and helping others learn.",
                     4: "Our goal is to provide you with the knowledge and skills you need to succeed in the tech industry.",
