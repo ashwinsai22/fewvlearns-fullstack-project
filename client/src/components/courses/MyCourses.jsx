@@ -14,7 +14,6 @@ const MyCourses = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  // Function to refresh the token
   async function refreshToken() {
     try {
       const response = await axios.post(
@@ -34,7 +33,6 @@ const MyCourses = () => {
     }
   }
 
-  // Function to fetch purchased courses
   async function fetchPurchasedCourses() {
     try {
       let token = localStorage.getItem("token");
@@ -46,12 +44,12 @@ const MyCourses = () => {
           },
         }
       );
+      const uniqueCourses = removeDuplicates(response.data);
       setCourses(uniqueCourses);
     } catch (error) {
       if (error.response && error.response.status === 403) {
-        // Token might be expired, try refreshing it
         try {
-          token = await refreshToken();
+          const token = await refreshToken();
           const response = await axios.get(
             "https://fewvlearns-kimy.onrender.com/purchased/purchased-courses",
             {
@@ -64,19 +62,13 @@ const MyCourses = () => {
           setCourses(uniqueCourses);
         } catch (refreshError) {
           setError("Error refreshing token and fetching courses");
-          console.error(
-            "Error refreshing token and fetching courses:",
-            refreshError
-          );
         }
       } else {
         setError("Error fetching purchased courses");
-        console.error("Error fetching purchased courses:", error);
       }
     }
   }
 
-  // Function to remove duplicate courses
   function removeDuplicates(courses) {
     const uniqueCourses = [];
     const courseIds = new Set();
@@ -95,14 +87,10 @@ const MyCourses = () => {
     fetchPurchasedCourses();
   }, []);
 
-  useEffect(() => {
-  }, [courses]);
-
   if (error) {
-    return <div className="text-red-500">{error}</div>;
+    return <div className="text-red-600">{error}</div>;
   }
 
-  // Map course names to imported images
   const imageMap = {
     "Learn About Kafka and Node.js": course1,
     "React, but with webpack": course2,
@@ -116,40 +104,46 @@ const MyCourses = () => {
   };
 
   return (
-    <section className="py-4 flex flex-col justify-center items-center max-w-5xl mx-auto">
+    <section className="py-4 flex flex-col justify-center items-center max-w-5xl mx-auto bg-black">
       <div className="mt-36">
-          <h1 className="text-3xl font-bold text-center text-gray-100 mb-4">
-            Your Purchased Courses 🎉
-          </h1>
-          <p className="mb-12 text-center text-gray-300">Gear up your development skills to next level with these mindblowing courses</p>
-          {courses.length === 0 ? (
-            <p className="text-center text-gray-200">No courses found.</p>
-          ) : (
-            <div className="md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
-              {courses.map((course) => (
-                <div
-                  className="bg-[#001313] overflow-hidden text-green-300 hover:text-green-400 shadow-sm shadow-green-300 rounded-sm hover:shadow-green-300 transform transition-transform duration-300 hover:scale-105"
-                  key={course.id}
-                >
-                  <img
-                    src={imageMap[course.name]}
-                    alt={course.name}
-                    className="w-full h-auto object-cover"
-                  />
-                  <div className="p-4">
-                    <h2
-                      className="text-xl font-semibold cursor-pointer"
-                      onClick={() => handleCourseClick(course.id)}
-                    >
-                      {course.name}
-                    </h2>
-                    <p className="text-gray-200">{course.description}</p>
-                  </div>
+        <h1 className="text-3xl font-bold text-center text-white mb-4">
+          Your Purchased Courses 🎉
+        </h1>
+
+        <p className="mb-12 text-center text-gray-400">
+          Gear up your development skills to next level with these mindblowing courses
+        </p>
+
+        {courses.length === 0 ? (
+          <p className="text-center text-gray-400">No courses found.</p>
+        ) : (
+          <div className="md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+            {courses.map((course) => (
+              <div
+                key={course.id}
+                className="bg-[#141414] overflow-hidden text-gray-200 shadow-lg hover:shadow-red-600 rounded-sm transform transition-transform duration-300 hover:scale-105"
+              >
+                <img
+                  src={imageMap[course.name]}
+                  alt={course.name}
+                  className="w-full h-auto object-cover"
+                />
+
+                <div className="p-4">
+                  <h2
+                    className="text-xl font-semibold cursor-pointer hover:text-red-600"
+                    onClick={() => handleCourseClick(course.id)}
+                  >
+                    {course.name}
+                  </h2>
+
+                  <p className="text-gray-400">{course.description}</p>
                 </div>
-              ))}
-            </div>
-          )}
-        </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </section>
   );
 };

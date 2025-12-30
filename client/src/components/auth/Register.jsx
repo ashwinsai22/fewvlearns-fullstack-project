@@ -30,11 +30,15 @@ const Register = ({ onLogin }) => {
   };
 
   return (
-    <div className="flex items-center justify-center px-8 py-32">
-      <form onSubmit={handleRegister} className="bg-[#001313] shadow-green-300 p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-2xl text-gray-100 mb-6 text-center">Register</h2>
+    <div className="flex items-center justify-center px-8 py-32 bg-black">
+      <form
+        onSubmit={handleRegister}
+        className="bg-[#141414] shadow-lg p-8 rounded-lg w-full max-w-md"
+      >
+        <h2 className="text-2xl text-white mb-6 text-center">Register</h2>
+
         <div className="mb-4">
-          <label className="block text-gray-200 mb-2" htmlFor="username">
+          <label className="block text-gray-300 mb-2" htmlFor="username">
             Username:
           </label>
           <input
@@ -43,11 +47,12 @@ const Register = ({ onLogin }) => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
-            className="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-300"
+            className="w-full px-3 py-2 text-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
           />
         </div>
+
         <div className="mb-4">
-          <label className="block text-gray-200 mb-2" htmlFor="email">
+          <label className="block text-gray-300 mb-2" htmlFor="email">
             Email:
           </label>
           <input
@@ -56,11 +61,12 @@ const Register = ({ onLogin }) => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-300"
+            className="w-full px-3 py-2 text-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
           />
         </div>
+
         <div className="mb-6">
-          <label className="block text-gray-200 mb-2" htmlFor="password">
+          <label className="block text-gray-300 mb-2" htmlFor="password">
             Password:
           </label>
           <input
@@ -69,12 +75,13 @@ const Register = ({ onLogin }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-300"
+            className="w-full px-3 py-2 text-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
           />
         </div>
+
         <button
           type="submit"
-          className="w-full hover:bg-green-300 border border-green-300 text-white hover:text-gray-9 text-gray-80000 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-300"
+          className="w-full border border-red-600 text-white hover:bg-red-600 hover:text-black py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
         >
           Register
         </button>

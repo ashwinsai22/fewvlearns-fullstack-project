@@ -40,37 +40,42 @@ const CourseDetails = () => {
 
   if (!courseDetails) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-100 mt-36">
+      <div className="flex items-center justify-center min-h-screen bg-black mt-36 text-gray-300">
         Loading...
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto flex items-center justify-center rounded-lg">
-      <div className="mt-36 w-full bg-style  bg-[#001313] p-8 shadow-md shadow-green-300/35 rounded-lg">
-        <h2 className="text-3xl text-gray-100 font-bold mb-6 text-center">
+    <div className="container mx-auto flex items-center justify-center rounded-lg bg-black">
+      <div className="mt-36 w-full bg-[#141414] p-8 shadow-lg rounded-lg">
+        <h2 className="text-3xl text-white font-bold mb-6 text-center">
           {courseDetails.course_name}
         </h2>
+
         <div className="mb-8">
-          <h3 className="text-2xl text-gray-200 font-semibold mb-4">What will be Covered?</h3>
-          <p className="text-gray-300 leading-relaxed">
+          <h3 className="text-2xl text-gray-200 font-semibold mb-4">
+            What will be Covered?
+          </h3>
+          <p className="text-gray-400 leading-relaxed">
             {courseDetails.syllabus}
           </p>
         </div>
+
         <div className="mb-8">
           <h3 className="text-2xl text-gray-200 font-semibold mb-4">
             Who is the Instructor?
           </h3>
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-gray-400 leading-relaxed">
             {courseDetails.instructor_bio}
           </p>
         </div>
+
         <div className="mb-8">
           <h3 className="text-2xl text-gray-200 font-semibold mb-4">
             What are the Prerequisites?
           </h3>
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-gray-400 leading-relaxed">
             {courseDetails.prerequisites}
           </p>
         </div>

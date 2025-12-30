@@ -14,15 +14,16 @@ const Success = () => {
     if (sessionId && courseIds.length > 0) {
       const storePurchase = async () => {
         try {
-          const response = await axios.post('https://fewvlearns-kimy.onrender.com/store-purchase/store-purchase', {
-            courseIds: courseIds
-          }, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem('token')}`
+          const response = await axios.post(
+            'https://fewvlearns-kimy.onrender.com/store-purchase/store-purchase',
+            { courseIds: courseIds },
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+              }
             }
-          });
-        } catch (error) {
-        }
+          );
+        } catch (error) {}
       };
 
       storePurchase();
@@ -34,9 +35,15 @@ const Success = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center py-36 bg-[#001313] px-4">
-      <h1 className="text-3xl my-4 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-transparent">Purchase Successful!</h1>
-      <p className='mb-4 text-gray-200'>You got one step closer to your goalllll..😻👏🏻</p>
+    <div className="flex flex-col items-center justify-center py-36 bg-[#0B0B0B] px-4">
+      <h1 className="text-3xl my-4 bg-gradient-to-r from-red-600 via-red-500 to-red-700 bg-clip-text text-transparent">
+        Purchase Successful!
+      </h1>
+
+      <p className="mb-4 text-gray-300">
+        You got one step closer to your goalllll..😻👏🏻
+      </p>
+
       <div className="w-full">
         <iframe
           src="https://giphy.com/embed/t3sZxY5zS5B0z5zMIz"
@@ -46,11 +53,12 @@ const Success = () => {
           allowFullScreen
         ></iframe>
       </div>
+
       <button
         onClick={handleGoToCourses}
-        className="mt-6 px-4 py-2 block w-full rounded-full border border-green-300 text-sm font-medium text-white hover:text-black hover:bg-green-300 focus:outline-none focus:ring sm:w-auto"
+        className="mt-6 px-4 py-2 block w-full rounded-full border border-red-600 text-sm font-medium text-white hover:text-black hover:bg-red-600 focus:outline-none focus:ring sm:w-auto"
       >
-        Go to your courses 
+        Go to your courses
       </button>
     </div>
   );

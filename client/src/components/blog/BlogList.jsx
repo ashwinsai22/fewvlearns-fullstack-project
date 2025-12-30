@@ -15,28 +15,45 @@ const BlogList = () => {
   }, []);
 
   return (
-    <div className="blog-list container mx-auto p-4">
+    <div className="blog-list container mx-auto p-4 bg-black">
       <div className="py-36">
-        <h1 className="text-4xl font-bold mb-8 text-center text-gray-200">Our Blogs</h1>
-        <p className="mt-6 text-gray-300 text-center">
+        <h1 className="text-4xl font-bold mb-8 text-center text-white">
+          Our Blogs
+        </h1>
+
+        <p className="mt-6 text-gray-400 text-center">
           Read our latest blogs and learn new skills in just a few seconds.
         </p>
+
         <ul className="space-y-8 mt-12">
-          {blogs.map((blog) => ( 
-            <li key={blog.id} className="bg-[#001313] p-8 rounded-lg shadow-sm shadow-green-300 md:px-8 md:py-8 hover:shadow-green-300">
-              <div className="flex justify-between items-center ">
-                <Link to={`/blog/${blog.id}`} className="text-gray-100 hover:text-green-400 text-lg">
+          {blogs.map((blog) => (
+            <li
+              key={blog.id}
+              className="bg-[#141414] p-8 rounded-lg shadow-lg md:px-8 md:py-8 hover:shadow-red-600"
+            >
+              <div className="flex justify-between items-center">
+                <Link
+                  to={`/blog/${blog.id}`}
+                  className="text-gray-200 hover:text-red-600 text-lg font-medium"
+                >
                   {blog.title}
                 </Link>
+
                 <div className="text-gray-400 text-sm">
                   {blog.tags.map((tag, index) => (
-                    <span key={index} className="ml-2 bg-gray-300 text-black p-2 rounded">
+                    <span
+                      key={index}
+                      className="ml-2 bg-gray-800 text-gray-200 p-2 rounded"
+                    >
                       #{tag}
                     </span>
                   ))}
                 </div>
               </div>
-              <p className="text-gray-400 mt-4">{blog.description}</p>
+
+              <p className="text-gray-400 mt-4">
+                {blog.description}
+              </p>
             </li>
           ))}
         </ul>
