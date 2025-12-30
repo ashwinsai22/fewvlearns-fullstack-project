@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: fewv-server
+  namespace: fewv
   labels:
     app: fewv-server
 spec:

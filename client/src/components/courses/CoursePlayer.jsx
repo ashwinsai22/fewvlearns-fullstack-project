@@ -12,7 +12,7 @@ const CoursePlayer = () => {
     const fetchCourseDetails = async () => {
       try {
         const response = await axios.get(
-          `https://fewvlearns-kimy.onrender.com/course-content/${courseId}`,
+          `https://academy-api.bezawada.link/course-content/${courseId}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem('token')}`

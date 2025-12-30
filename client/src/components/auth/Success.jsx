@@ -15,7 +15,7 @@ const Success = () => {
       const storePurchase = async () => {
         try {
           const response = await axios.post(
-            'https://fewvlearns-kimy.onrender.com/store-purchase/store-purchase',
+            'https://academy-api.bezawada.link/store-purchase/store-purchase',
             { courseIds: courseIds },
             {
               headers: {

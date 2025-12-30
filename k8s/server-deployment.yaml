@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fewv-server
+  namespace: fewv
   labels:
     app: fewv-server
 spec:
@@ -19,3 +20,6 @@ spec:
           image: ashwinsai22/fewv-server:latest
           ports:
             - containerPort: 3000
+          envFrom:
+            - secretRef:
+                name: fewv-server-secrets
