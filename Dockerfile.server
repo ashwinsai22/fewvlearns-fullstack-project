@@ -2,13 +2,14 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy ROOT package.json (server deps)
-COPY package*.json ./
+# Copy ONLY server package files
+COPY server/package*.json ./
 
-RUN npm install --omit=dev --no-audit --no-fund
+# Install prod dependencies
+RUN npm install --omit=dev
 
 # Copy server source code
-COPY server/ ./server
+COPY server ./server
 
 EXPOSE 3000
 
