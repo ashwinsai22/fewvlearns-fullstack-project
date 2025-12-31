@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fewv-server
+  namespace: fewv
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fewv-server
+  template:
+    metadata:
+      labels:
+        app: fewv-server
+    spec:
+      containers:
+        - name: fewv-server
+          image: ashwinsai22/fewv-server:latest
+          command: ["sh", "-c"]
+          args:
+            - |
+              echo "==== ENV VARS ====";
+              env;
+              echo "==== STARTING APP ====";
+              node index.js
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - secretRef:
+                name: fewv-server-secrets   # <-- FIXED NAME
