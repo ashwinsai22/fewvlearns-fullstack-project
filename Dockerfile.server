@@ -2,14 +2,12 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Install dependencies
 COPY server/package*.json ./
 RUN npm install --production
 
-# Copy server code
 COPY server/ .
 
-# Backend runs on 3000
-EXPOSE 3000
+EXPOSE 5000
 
-CMD ["npm", "start"]
+# 🚨 DO NOT use npm start (uses nodemon)
+CMD ["node", "server.js"]
