@@ -2,15 +2,10 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy only server package files
 COPY server/package*.json ./
-
-# Install prod dependencies
 RUN npm install --omit=dev --no-audit --no-fund
 
-# Copy server source code
 COPY server/ .
 
-EXPOSE 3000
-
+EXPOSE 3001
 CMD ["node", "index.js"]
