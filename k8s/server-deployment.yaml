@@ -27,4 +27,4 @@ spec:
             - containerPort: 3000
           envFrom:
             - secretRef:
-                name: fewv-server-secret   # <-- FIXED NAME
+                name: fewv-server-secrets   # <-- FIXED NAME
