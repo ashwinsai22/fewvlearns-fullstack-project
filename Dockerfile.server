@@ -10,4 +10,4 @@ COPY server/ .
 EXPOSE 5000
 
 # 🚨 DO NOT use npm start (uses nodemon)
-CMD ["node", "server.js","npm", "start"]
+CMD ["node", "server.js"]
