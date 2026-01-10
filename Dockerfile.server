@@ -1,14 +1,19 @@
 FROM node:18-alpine
 
+# Create app directory
 WORKDIR /app
 
+# Copy only package files first (better caching)
 COPY server/package*.json ./
-RUN npm install --production
 
+# Install only production dependencies
+RUN npm install --omit=dev
+
+# Copy remaining backend code
 COPY server/ .
-RUN npm run build
 
+# Expose backend port
 EXPOSE 5000
 
-# 🚨 DO NOT use npm start (uses nodemon)
-CMD ["node", "server.js"]
+# Start server using npm lifecycle
+CMD ["npm", "start"]
